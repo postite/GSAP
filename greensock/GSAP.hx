@@ -37,6 +37,7 @@ var overwrite : String ;/*(or integer) - Controls how (and if) other tweens of t
 */
 }
 typedef Params={
+
     >TLProperties,
     
 }
@@ -344,48 +345,6 @@ extern class TweenPlugin {
 }
 /*
 
-//com.greensock.core
-declare var Animation:Animation;
-declare var SimpleTimeline:SimpleTimeline;
 
-//com.greensock
-declare var TimelineLite:TimelineLite;
-declare var TimelineMax:TimelineMax;
-declare var TweenLite:TweenLite;
-declare var TweenMax:TweenMax;
-
-//com.greensock.easing
-declare var Back:Back;
-declare var Bounce:Bounce;
-declare var Circ:Circ;
-declare var Cubic:Cubic;
-declare var Ease:Ease;
-declare var EaseLookup:EaseLookup;
-declare var Elastic:Elastic;
-declare var Expo:Expo;
-declare var Linear:Linear;
-declare var Power0:Power0;
-declare var Power1:Power1;
-declare var Power2:Power2;
-declare var Power3:Power3;
-declare var Power4:Power4;
-declare var Quad:Quad;
-declare var Quart:Quart;
-declare var Quint:Quint;
-declare var Sine:Sine;
-declare var SlowMo:SlowMo;
-declare var SteppedEase:SteppedEase;
-declare var Strong:Strong;
-
-//com.greensock.plugins
-declare var BezierPlugin:BezierPlugin;
-declare var ColorPropsPlugin:ColorPropsPlugin;
-declare var CSSPlugin:CSSPlugin;
-declare var CSSRulePlugin:CSSRulePlugin;
-declare var EaselPlugin:EaselPlugin;
-declare var RaphaelPlugin:RaphaelPlugin;
-declare var RoundPropsPlugin:RoundPropsPlugin;
-declare var ScrollToPlugin:ScrollToPlugin;
-declare var TweenPlugin:TweenPlugin;
 
 */
