@@ -2,5 +2,6 @@
 
 # Main (js:main.js)
 -main Main
-#--js-modern
+--js-modern
+--dead-code-elimination
 -js tween.js
