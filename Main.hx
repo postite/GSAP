@@ -2,13 +2,14 @@
 //import greensock.GSAP;
 import js.Lib;
 import js.Dom;
-import greensock.TweenLite;
+import greensock.TweenMax;
+import greensock.GSAP.Animation;
 //import greensock.easing.Ease.Back;
 //import greensock.plugins.CSSPlugin;
 
 class Main 
 {
-	var tween:TweenLite;
+	var tween:TweenMax;
 	var doc:js.Dom.Document;
 	var b:Int;
 	var logo:HtmlDom;
@@ -31,7 +32,9 @@ class Main
 		//untyped __js__("TweenLite.to('#logo',1,{left:'300px'})");
 		trace("yo");
 		b=0;
-		tween= TweenLite.to(this,1,{b:300,onUpdate:update});
+
+		// no dependencies
+		tween= TweenMax.to(this,1,{b:300,onUpdate:update});
 
 		//need easing
 		//tween= TweenLite.to(this,1,{b:300,ease:Back.easeOut,onUpdate:update,onUpdateParams:[logo],onComplete:end,onCompleteParams:["{self}"]});
@@ -48,7 +51,7 @@ class Main
 		trace("b="+b);
 		//logo.style.left=b+"px";
 	}
-	function end(?r:TweenLite) 
+	function end(?r:Animation) 
 	{
 		trace("end "+untyped(logo.style["-webkit-transform"]));
 		trace("end "+untyped(logo.style["left"]));
