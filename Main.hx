@@ -4,6 +4,7 @@ import js.Lib;
 import js.Dom;
 import greensock.TweenMax;
 import greensock.GSAP.Animation;
+import greensock.TimelineMax;
 //import greensock.easing.Ease.Back;
 //import greensock.plugins.CSSPlugin;
 
