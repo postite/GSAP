@@ -1,20 +1,28 @@
 package greensock;
-
+import greensock.GSAP;
+//import greensock.TweenLite;
 
 @:native("TweenMax")
-extern class TweenMax extends TweenLite {
+extern class TweenMax extends Animation {
     public static function __init__():Void{
 
-        trace("include TweenMax")
+        trace("include TweenMax");
+
         haxe.macro.Tools.includeFile("./greensock/GreenSock-JS/src/minified/TweenMax.min.js");
 
     }
+
+   
+
+
+
+
     public static function delayedCall(delay:Float, _callback:Func, ?params:Array<Dynamic>, ?scope:Dynamic, ?useFrames:Bool):TweenMax;
     public static function from(target:Dynamic, duration:Float, vars:Dynamic):TweenMax;
     public static function fromTo(target:Dynamic, duration:Float, fromVars:Dynamic, toVars:Dynamic):TweenMax;
     public static function getAllTweens(?includeTimelines:Bool):Array<Dynamic>;
     public static function getTweensOf(target:Dynamic):Array<Dynamic>;
-    override public function invalidate():Dynamic;
+     override public function invalidate():Dynamic;
     public static function isTweening(target:Dynamic):Bool;
     public static function killAll(?complete:Bool, ?tweens:Bool, ?delayedCalls:Bool, ?timelines:Bool):Void;
     public static function killChildTweensOf(parent:Dynamic, ?complete:Bool):Void;
