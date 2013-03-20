@@ -5,8 +5,7 @@ package greensock;
 extern class TweenMax extends TweenLite {
     public static function __init__():Void{
 
-        trace("include TweenMax");
-        haxe.macro.Tools.includeFile("./greensock/GreenSock-JS/src/minified/easing/EasePack.min.js");
+        trace("include TweenMax")
         haxe.macro.Tools.includeFile("./greensock/GreenSock-JS/src/minified/TweenMax.min.js");
 
     }

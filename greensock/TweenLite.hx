@@ -1,19 +1,20 @@
 package greensock;
 import GSAP.Animation;
-import GSAP.Ease;
+
+//import greensock.easing.Ease;
 import GSAP.Func;
 
 @:native("TweenLite")
 extern class TweenLite extends Animation {
-    public var defaultEase:Ease;
+    //public var defaultEase:Ease;
     public static var defaultOverwrite:String;
     public var target(default,never):Dynamic;
     public var ticker:Dynamic;
 
     public static function __init__():Void{
-    	trace(" include tweenLite");
+    	trace("TweenLite included");
         
-        haxe.macro.Tools.includeFile("./greensock/GreenSock-JS/src/minified/easing/EasePack.min.js");
+       // haxe.macro.Tools.includeFile("./greensock/GreenSock-JS/src/minified/easing/EasePack.min.js");
         haxe.macro.Tools.includeFile("./greensock/GreenSock-JS/src/minified/TweenLite.min.js");
 
     }

@@ -5,3 +5,5 @@
 --js-modern
 --dead-code-elimination
 -js tween.js
+
+#-cmd java -jar /compiler.jar  --js tween.js --js_output_file=pop.js

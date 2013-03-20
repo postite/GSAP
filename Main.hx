@@ -1,9 +1,11 @@
 //import js.JQuery;
-import greensock.GSAP;
+//import greensock.GSAP;
 import js.Lib;
 import js.Dom;
 import greensock.TweenLite;
-import greensock.CSSPlugin;
+//import greensock.easing.Ease.Back;
+//import greensock.plugins.CSSPlugin;
+
 class Main 
 {
 	var tween:TweenLite;
@@ -12,7 +14,7 @@ class Main
 	var logo:HtmlDom;
 	function new()
 	{
-		trace("helleo");
+		trace("hello");
 
 
 		//new JQuery(js.Lib.document).ready(init);
@@ -29,14 +31,21 @@ class Main
 		//untyped __js__("TweenLite.to('#logo',1,{left:'300px'})");
 		trace("yo");
 		b=0;
+		tween= TweenLite.to(this,1,{b:300,onUpdate:update});
+
+		//need easing
 		//tween= TweenLite.to(this,1,{b:300,ease:Back.easeOut,onUpdate:update,onUpdateParams:[logo],onComplete:end,onCompleteParams:["{self}"]});
-		TweenLite.to(logo,1,{x:"+600",onComplete:end});
+		
+		//need cssPlugin
+		//TweenLite.to(logo,1,{x:"+600",onComplete:end});
+
+		//need CSSplugin
 		//TweenLite.set("#logo",{rotation:"+400"});
 
 	}
 	function update(logo:HtmlDom) 
 	{
-		//trace("b="+logo);
+		trace("b="+b);
 		//logo.style.left=b+"px";
 	}
 	function end(?r:TweenLite) 
