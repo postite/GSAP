@@ -1,0 +1,7 @@
+<project name="gsap" url="" license="GPL">
+    <user name="postite"/>
+    <tag v="js"/>
+   
+    <description>extern classes for greensock animationpackage</description>
+    <version name="1.0">test realease</version>
+</project>

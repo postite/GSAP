@@ -2,6 +2,7 @@
 
 # Main (js:main.js)
 -main Main
+-cp src
 --js-modern
 --dead-code-elimination
 -js tween.js

@@ -1,26 +1,27 @@
 package greensock;
-import greensock.GSAP;
+import GSAP.SimpleTimeline;
 
-@:native("TimelineMax")
-extern class TimelineMax extends greensock.GSAP.SimpleTimeline {
+
+@:native("TimelineLite")
+extern class TimelineLite extends SimpleTimeline {
 
 
 	public static function __init__():Void{
-    #if !noEmbedJSPlugin
-      trace("TimelineMax included");
-        haxe.macro.Tools.includeFile("./greensock/GreenSock-JS/src/minified/TimelineMax.min.js");
+        #if !noEmbedJSPlugin
+      trace("TimeLineLite included");
+        haxe.macro.Tools.includeFile("./greensock/GreenSock-JS/src/minified/TimelineLite.min.js");
         #end
     }
-    public function new(vars:Dynamic):Void;
-   ///from TimeLite
-   public function add( value:Dynamic, position:Dynamic = "+=0", align:String = "normal", stagger:Float = 0):Dynamic;
-   	public function addLabel(label:String, ?time:Float):Dynamic;
-    public function append(value:Dynamic, ?offset:Float):Dynamic; //deprecated in favor of add
+    public function new(?vars:Dynamic):Void;
+      
+    
+    public function addLabel(label:String, time:Float):Dynamic;
+    public function append(value:Dynamic, offset:Float):Dynamic; //deprecated in favor of add
     public function appendMultiple(tweens:Array<Dynamic>, offset:Float, align:String, stagger:Float):Dynamic; //deprecated in favor of add
     public function call(_callback:Func, ?params:Array<Dynamic>, ?scope:Dynamic, ?offset:Float, ?baseTimeOrLabel:Dynamic):Dynamic;
     public function clear(?labels:Bool):Dynamic;
    	override  public function duration(value:Float):Dynamic;
-    public static function exportRoot(?vars:Dynamic, ?omitDelayedCalls:Bool):TimelineMax;
+    public static function exportRoot(?vars:Dynamic, ?omitDelayedCalls:Bool):TimelineLite;
     public function from(target:Dynamic, duration:Float, vars:Dynamic, offset:Float, ?baseTimeOrLabel:Dynamic):Dynamic;
     public function fromTo(target:Dynamic, duration:Float, fromVars:Dynamic, toVars:Dynamic, offset:Float, ?baseTimeOrLabel:Dynamic):Dynamic;
     public function getChildren(?nested:Bool, ?tweens:Bool, ?timelines:Bool, ?ignoreBeforeTime:Float):Array<Dynamic>;
@@ -28,6 +29,8 @@ extern class TimelineMax extends greensock.GSAP.SimpleTimeline {
     public function getTweensOf(target:Dynamic, ?nested:Bool):Array<Dynamic>;
   	override   public function insert(value:Dynamic, timeOrLabel:Dynamic):Dynamic;//deprecated in favor of add
     public function insertMultiple(tweens:Array<Dynamic>, timeOrLabel:Dynamic, align:String, stagger:Float):Dynamic;//deprecated in favor of add
+  	override   public function invalidate():Dynamic;
+    public function progress(value:Float):Dynamic;
     public function remove(value:Dynamic):Dynamic;
     public function removeLabel(label:String):Dynamic;
    	override public function seek(timeOrLabel:Dynamic, ?suppressEvents:Bool):Dynamic;
@@ -37,27 +40,7 @@ extern class TimelineMax extends greensock.GSAP.SimpleTimeline {
     public function staggerFromTo(targets:Array<Dynamic>, duration:Float, fromVars:Dynamic, toVars:Dynamic, stagger:Float, offset:Float, ?baseTimeOrLabel:Dynamic, ?onCompleteAll:Func, ?onCompleteAllParams:Array<Dynamic>, ?onCompleteAllScope:Dynamic):Dynamic;
     public function staggerTo(targets:Array<Dynamic>, duration:Float, vars:Dynamic, stagger:Float, offset:Float, ?baseTimeOrLabel:Dynamic, ?onCompleteAll:Func, ?onCompleteAllParams:Array<Dynamic>, ?onCompleteAllScope:Dynamic):Dynamic;
     public function stop():Dynamic;
-    public function to(target:Dynamic, duration:Float, vars:Params, offset:Float, ?baseTimeOrLabel:Dynamic):Dynamic;
-   	
-
-    //TimelineMAx specific
-
-
-   public function addCallback(_callback:Func, timeOrLabel:Dynamic, ?params:Array<Dynamic>, ?scope:Dynamic):TimelineMax;
-   public function currentLabel(?value:String):Dynamic;
-   public function getActive(?nested:Bool, ?tweens:Bool, ?timelines:Bool):Array<Dynamic>;
-   public function getLabelAfter(time:Float):String;
-   public function getLabelBefore(time:Float):String;
-   public function getLabelsArray():Array<Dynamic>;
-    override public function invalidate():Dynamic;
-   public function progress(?value:Float):Dynamic;
-   public function removeCallback(_callback:Func, ?timeOrLabel:Dynamic):TimelineMax;
-   public function repeat(value:Float):Dynamic;
-   public function repeatDelay(value:Float):Dynamic;
-   override public function time(?value:Float, ?suppressEvents:Bool):Dynamic;
-   override public function totalDuration(?value:Float):Float;
-   public function totalProgress(?value:Float):Dynamic;
-   public function tweenFromTo(fromTimeOrLabel:Dynamic, toTimeOrLabel:Dynamic, ?vars:Dynamic):Animation;
-   public function tweenTo(timeOrLabel:Dynamic, ?vars:Dynamic):Animation;
-   public function yoyo(?value:Bool):Dynamic;
+    public function to(target:Dynamic, duration:Float, vars:GSAP.Params, offset:Float, ?baseTimeOrLabel:Dynamic):Dynamic;
+   	override  public function totalDuration(?value:Float):Dynamic;
+    public var  usesFrames(default,never):Bool;
 }
